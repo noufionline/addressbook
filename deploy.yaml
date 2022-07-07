@@ -4,7 +4,7 @@
   vars:
     - war_name: addressbook-2.0.war
     - tomcat_version: 10
-    - war_remote_path: /opt/apache-tomcat-{{ tomcat_version }}/webapps
+    - war_remote_path: /opt/tomcat{{ tomcat_version }}/webapps
   tasks:
     - name: Create Directory
       file:
