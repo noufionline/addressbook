@@ -19,3 +19,10 @@
         dest: "{{ war_remote_path }}/{{ war_name }}"
         owner: tomcat 
         group: tomcat
+      notify: restart tomcat
+
+  handlers:
+    - name: restart tomcat
+      service:
+        name: tomcat
+        state: restarted
