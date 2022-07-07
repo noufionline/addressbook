@@ -1,6 +1,0 @@
----
- - hosts: webservers 
-   become: yes
-   tasks:
-     - debug:
-        msg: "Hello, World!"

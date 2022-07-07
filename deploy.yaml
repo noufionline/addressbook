@@ -1,0 +1,13 @@
+---
+- hosts: webserver
+  vars:
+    - war_name: addressbook.war
+    - tomcat_version: 10
+    - war_remote_path: /opt/apache-tomcat-{{ tomcat_version }}/webapps
+  tasks:
+    - name: Copy WAR to Remote server
+      copy: 
+        src: target/{{ war_name }} 
+        dest: "{{ war_remote_path }}/{{ war_name }}"
+        owner: tomcat 
+        group: tomcat
