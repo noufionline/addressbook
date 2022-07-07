@@ -5,6 +5,11 @@
     - tomcat_version: 10
     - war_remote_path: /opt/apache-tomcat-{{ tomcat_version }}/webapps
   tasks:
+    - name: Create Directory
+      file:
+        path: "{{ war_remote_path }}"
+        state: directory
+        
     - name: Copy WAR to Remote server
       copy: 
         src: target/{{ war_name }} 
